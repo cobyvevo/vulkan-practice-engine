@@ -1,0 +1,29 @@
+{
+	"folders":
+	[
+			{
+				"path": "bin/..",
+				"file_exclude_patterns": ["*.sublime-project"],
+			}
+	],
+
+	"build_systems":
+	[
+		{
+			"name": "Debug Build 64bit",
+			"working_dir": "${project_path}",
+			"cmd": "make test",
+			
+			"selector": "source.c++",
+			"shell": true,
+		},
+		{
+			"name": "Release Build 64bit",
+			"working_dir": "${project_path}",
+			"cmd": "make test",
+			
+			"selector": "source.c++",
+			"shell": true,
+		}
+	]
+}

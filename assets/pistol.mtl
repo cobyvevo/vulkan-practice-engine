@@ -1,0 +1,50 @@
+# Blender MTL File: 'None'
+# Material Count: 4
+
+newmtl Model35Mtl
+Ns 283.333323
+Ka 1.000000 1.000000 1.000000
+Kd 0.032876 0.032876 0.032876
+Ks 0.010185 0.010185 0.010185
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd /media/coby/Main Storage/cshir/Documents/2022/hr2/guns/hipower/Model35Tex.png
+map_d /media/coby/Main Storage/cshir/Documents/2022/hr2/guns/hipower/Model35Tex.png
+
+newmtl Model36Mtl
+Ns 283.333323
+Ka 1.000000 1.000000 1.000000
+Kd 0.024223 0.024223 0.024223
+Ks 0.007504 0.007504 0.007504
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd /media/coby/Main Storage/cshir/Documents/2022/hr2/guns/hipower/Model36Tex.png
+map_d /media/coby/Main Storage/cshir/Documents/2022/hr2/guns/hipower/Model36Tex.png
+
+newmtl Model38Mtl
+Ns 283.333323
+Ka 1.000000 1.000000 1.000000
+Kd 0.086901 0.086901 0.086901
+Ks 0.026922 0.026922 0.026922
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd /media/coby/Main Storage/cshir/Documents/2022/hr2/guns/hipower/Model35Tex.png
+map_d /media/coby/Main Storage/cshir/Documents/2022/hr2/guns/hipower/Model35Tex.png
+
+newmtl Model41Mtl
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.078057 0.034230 0.016068
+Ks 0.006208 0.006208 0.006208
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd /media/coby/Main Storage/cshir/Documents/2022/hr2/guns/hipower/Model41Tex.png
+map_d /media/coby/Main Storage/cshir/Documents/2022/hr2/guns/hipower/Model41Tex.png
