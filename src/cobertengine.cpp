@@ -627,7 +627,7 @@ namespace CobertEngine {
 		vk::ImageViewCreateInfo iview{};
 		iview.image = lostEmpire.allocatedimage.image;
 		iview.viewType = vk::ImageViewType::e2D;
-		iview.format = vk::Format::eR8G8B8A8Srgb; //FORMAT
+		iview.format = vk::Format::eB8G8R8A8Srgb; //FORMAT
 		iview.subresourceRange.aspectMask = vk::ImageAspectFlagBits::eColor;
 		iview.subresourceRange.baseMipLevel = 0;
 		iview.subresourceRange.levelCount = 1;
@@ -1913,7 +1913,7 @@ namespace CobertEngine {
 
 			vk::ImageMemoryBarrier transfer_barrier{};
 			transfer_barrier.oldLayout = vk::ImageLayout::eUndefined;
-			transfer_barrier.newLayout = vk::ImageLayout::eShaderReadOnlyOptimal;
+			transfer_barrier.newLayout = vk::ImageLayout::eTransferDstOptimal;
 			transfer_barrier.image = newimg.image;
 			transfer_barrier.subresourceRange = range;
 
@@ -1943,6 +1943,29 @@ namespace CobertEngine {
 			copyRegion.imageExtent = imageExtent;
 
 			cmd.copyBufferToImage(stagingBuffer.buffer, newimg.image, vk::ImageLayout::eTransferDstOptimal, 1, &copyRegion);
+		
+
+			vk::ImageMemoryBarrier transfer_barrier_readable{};
+			transfer_barrier_readable.oldLayout = vk::ImageLayout::eTransferDstOptimal;
+			transfer_barrier_readable.newLayout = vk::ImageLayout::eShaderReadOnlyOptimal;
+			transfer_barrier_readable.image = newimg.image;
+			transfer_barrier_readable.subresourceRange = range;
+
+			transfer_barrier_readable.srcAccessMask = vk::AccessFlagBits::eTransferWrite;
+			transfer_barrier_readable.dstAccessMask = vk::AccessFlagBits::eShaderRead;
+
+			cmd.pipelineBarrier(
+				vk::PipelineStageFlagBits::eAllTransfer,
+				vk::PipelineStageFlagBits::eFragmentShader,
+				{},
+				0,
+				nullptr,
+				0,
+				nullptr,
+				1,
+				&transfer_barrier_readable);
+
+
 		});
 
 

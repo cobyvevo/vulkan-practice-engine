@@ -18,5 +18,5 @@ layout (set = 2, binding = 0) uniform sampler2D tex1;
 void main() {
 	//outColor = vec4(fragColor + sceneData.ambientColor.xyz,1.0); //usually ambient isnt here
 	vec4 col = texture(tex1, fragUV);
-	outColor = vec4(col.xyz,col.w);
+	outColor = vec4(col.z,col.y,col.x,col.w);
 }
